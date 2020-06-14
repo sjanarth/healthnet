@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    archivesBaseName = 'com.healthnet'
+    archiveVersion   = '0.1.0'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'mysql:mysql-connector-java:5.1.37'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'org.webjars:bootstrap:4.5.0'
+    implementation 'org.webjars:jquery:3.5.1'
+    testImplementation 'junit:junit:4.12'
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
+
+group = 'com.healthnet'
+version = '1.0-SNAPSHOT'
+description = 'Health Net App'
+sourceCompatibility = '1.8'

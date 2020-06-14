@@ -1,0 +1,26 @@
+Maven
+=====
+mvn -DskipTests=true clean package
+ls -lh ./target/*.jar
+docker build -t com/healthnet .
+
+Gradle
+======
+gradle clean bootJar
+ls -lh ./build/libs/*.jar
+docker build --build-arg JAR_FILE=build/libs/*.jar -t com/healthnet .
+
+Save/Load Docker container
+==========================
+docker save com/healthnet:latest | gzip | ssh -i ~/.oci/healthnet ubuntu@158.101.36.5 'gunzip | docker load'
+docker run -d --restart always -p 8080:80 --name healthnet com/healthnet
+
+Direct hosting
+==============
+scp -i ~/.oci/healthnet ./target/com.healthnet-1.0-SNAPSHOT.jar ubuntu@158.101.36.5:/home/ubuntu
+
+sudo iptables-save > ~/iptables-rules
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -F
