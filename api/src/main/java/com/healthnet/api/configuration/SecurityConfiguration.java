@@ -1,4 +1,4 @@
-package com.healthnet.configuration;
+package com.healthnet.api.configuration;
 
 import javax.sql.DataSource;
 

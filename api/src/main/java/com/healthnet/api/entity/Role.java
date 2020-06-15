@@ -1,4 +1,4 @@
-package com.healthnet.entity;
+package com.healthnet.api.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

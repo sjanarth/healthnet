@@ -1,6 +1,6 @@
-package com.healthnet.repository;
+package com.healthnet.api.repository;
 
-import com.healthnet.entity.User;
+import com.healthnet.api.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

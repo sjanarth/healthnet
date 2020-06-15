@@ -1,4 +1,4 @@
-package com.healthnet.configuration;
+package com.healthnet.api.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

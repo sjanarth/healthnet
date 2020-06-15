@@ -1,6 +1,6 @@
-package com.healthnet.service;
+package com.healthnet.api.service;
 
-import com.healthnet.entity.User;
+import com.healthnet.api.entity.User;
 
 import java.util.Collection;
 import java.util.Optional;

@@ -1,7 +1,7 @@
-package com.healthnet.controller;
+package com.healthnet.api.controller;
 
-import com.healthnet.entity.User;
-import com.healthnet.service.UserService;
+import com.healthnet.api.entity.User;
+import com.healthnet.api.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

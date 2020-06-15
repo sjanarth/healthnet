@@ -1,9 +1,9 @@
-package com.healthnet.service;
+package com.healthnet.api.service;
 
-import com.healthnet.entity.Role;
-import com.healthnet.entity.User;
-import com.healthnet.repository.RoleRepository;
-import com.healthnet.repository.UserRepository;
+import com.healthnet.api.entity.Role;
+import com.healthnet.api.entity.User;
+import com.healthnet.api.repository.RoleRepository;
+import com.healthnet.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
