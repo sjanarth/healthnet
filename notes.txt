@@ -1,0 +1,7 @@
+sudo systemctl status  mysql
+sudo systemctl start mysql
+sudo systemctl status  mysql
+sudo mysql -u root
+
+mvn spring-boot:run
+
