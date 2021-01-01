@@ -1,5 +1,2 @@
-api/target/classes/
-/api/target/generated-sources/
-/api/target/maven-archiver/
-/api/target/maven-status/
-/api/target/com.healthnet-api-1.0-SNAPSHOT.jar
+/.idea
+/api/target
