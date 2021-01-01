@@ -39,6 +39,7 @@ public enum HealthnetSeededRoles implements SeededRole
                     })));
     static
     {
+        //System.out.println("Running static block in HealthnetSeededRoles");
         SugarSeededRoles.TENANCY_GROUP_ADMIN.privileges.add(HealthnetSeededPrivileges.ADD_TENANCY_FACILITY);
         SugarSeededRoles.TENANCY_GROUP_ADMIN.privileges.add(HealthnetSeededPrivileges.MANAGE_TENANCY_FACILITY);
         SugarSeededRoles.TENANCY_ADMIN.privileges.add(HealthnetSeededPrivileges.ADD_TENANCY_FACILITY);
@@ -68,4 +69,7 @@ public enum HealthnetSeededRoles implements SeededRole
     public List<SeededPrivilege> getPrivileges() {
         return privileges;
     }
+
+    @Override
+    public String getOrigin() { return "Healthnet"; }
 }

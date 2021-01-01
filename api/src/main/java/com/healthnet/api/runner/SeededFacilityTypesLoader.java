@@ -3,6 +3,9 @@ package com.healthnet.api.runner;
 import com.healthnet.api.facilitytype.FacilityType;
 import com.healthnet.api.facilitytype.FacilityTypeRepository;
 import com.healthnet.api.facilitytype.SeededFacilityTypes;
+import com.sugarsaas.api.runner.SeededRolesLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
@@ -12,10 +15,12 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.toMap;
 
-@Order(103)
+@Order(111)
 @Component
-public class HealthnetSeededFacilityTypesLoader implements CommandLineRunner
+public class SeededFacilityTypesLoader implements CommandLineRunner
 {
+    private static final Logger logger = LoggerFactory.getLogger(SeededRolesLoader.class);
+
     @Autowired
     private FacilityTypeRepository facilityTypeRepository;
 
@@ -29,11 +34,11 @@ public class HealthnetSeededFacilityTypesLoader implements CommandLineRunner
                 ft.setName(sft.name);
                 ft.setDescription(sft.description);
                 ft.setSeeded(true);
-                System.out.println("Loading Healthnet Seeded FacilityType "+sft.name);
+                logger.info("Loading Seeded FacilityType "+sft.name);
                 facilityTypeRepository.saveAndFlush(ft);
             } else if (!ft.getDescription().equals(sft.description))  {
                 ft.setDescription(sft.description);
-                System.out.println("Syncing Healthnet Seeded FacilityType "+sft.name);
+                logger.info("Syncing Seeded FacilityType "+sft.name);
                 facilityTypeRepository.saveAndFlush(ft);
             }
         }

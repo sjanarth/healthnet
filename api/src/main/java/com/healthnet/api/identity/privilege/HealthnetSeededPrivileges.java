@@ -31,4 +31,9 @@ public enum HealthnetSeededPrivileges implements SeededPrivilege
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String getOrigin() {
+        return "Healthnet";
+    }
 }

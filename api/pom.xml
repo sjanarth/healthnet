@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.healthnet</groupId>
-    <artifactId>com.healthnet-api</artifactId>
+    <groupId>healthnet</groupId>
+    <artifactId>healthnet-api</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Health Net</name>
     <description>Health Net Application</description>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,11 +50,16 @@
             <version>1.2.3</version>
         </dependency>
         <dependency>
-            <groupId>com.sugarsaas</groupId>
-            <artifactId>com.sugarsaas.api</artifactId>
+            <groupId>sugarsaas</groupId>
+            <artifactId>sugarsaas-api</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>/home/sjanarth/projects/sugar/api/target/com.sugarsaas.api-1.0-SNAPSHOT-fwk.jar</systemPath>
+            <systemPath>${project.basedir}/../../sugar/api/target/sugarsaas-api-1.0-SNAPSHOT-fwk.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.9-RC1</version>
         </dependency>
         <!-- Testing dependencies -->
         <!-- exclude junit 4 -->

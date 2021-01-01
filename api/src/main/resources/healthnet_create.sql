@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS healthnet;
 USE healthnet;
 
-CREATE TABLE IF NOT EXISTS facility_types (
+CREATE TABLE IF NOT EXISTS healthnet_facility_types (
     id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) UNIQUE NOT NULL,
     description VARCHAR(255),
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS facility_types (
     time_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS facilities (
+CREATE TABLE IF NOT EXISTS healthnet_facilities (
     id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
@@ -22,11 +22,11 @@ CREATE TABLE IF NOT EXISTS facilities (
     type INT(11) UNSIGNED NOT NULL,
     time_created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     time_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT facility_tenancy FOREIGN KEY (tenancy_id) REFERENCES tenancies (id),
-    CONSTRAINT facility_type FOREIGN KEY (type) REFERENCES facility_types (id)
+    CONSTRAINT facility_tenancy FOREIGN KEY (tenancy_id) REFERENCES sugar_tenancies (id),
+    CONSTRAINT facility_type FOREIGN KEY (type) REFERENCES healthnet_facility_types (id)
 );
 
-CREATE TABLE IF NOT EXISTS persistent_logins (
+CREATE TABLE IF NOT EXISTS healthnet_persistent_logins (
     username VARCHAR(64) NOT NULL,
     series VARCHAR(64) NOT NULL,
     token VARCHAR(64) NOT NULL,

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name="facilities")
+@Table(name="healthnet_facilities")
 public class Facility extends AuditableEntity
 {
     @Id

@@ -1,4 +1,4 @@
-USE healthnet;
+#USE healthnet;
 
-DROP TABLE IF EXISTS facilities;
-DROP TABLE IF EXISTS facility_types;
+DROP TABLE IF EXISTS healthnet_facilities;
+DROP TABLE IF EXISTS healthnet_facility_types;
