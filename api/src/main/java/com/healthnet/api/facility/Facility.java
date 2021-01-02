@@ -1,5 +1,6 @@
 package com.healthnet.api.facility;
 
+import com.healthnet.api.facilitytype.FacilityType;
 import com.sugarsaas.api.core.AuditableEntity;
 import com.sugarsaas.api.tenancy.Tenancy;
 import lombok.Data;
@@ -36,12 +37,10 @@ public class Facility extends AuditableEntity
     private String phone;
 
     @JoinColumn(name="tenancy_id")
-    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     private Tenancy tenancy;
 
-    /*
-    @JoinColumn(name="facility_type")
-    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-    private Tenancy tenancy;
-    */
+    @JoinColumn(name="type")
+    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    private FacilityType facilityType;
 }
