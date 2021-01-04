@@ -3,7 +3,7 @@ package com.healthnet.api.runner;
 import com.healthnet.api.facilitytype.FacilityType;
 import com.healthnet.api.facilitytype.FacilityTypeRepository;
 import com.healthnet.api.facilitytype.SeededFacilityTypes;
-import com.sugarsaas.api.runner.SeededRolesLoader;
+import com.sugarsaas.api.loader.SeededRolesLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

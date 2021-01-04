@@ -1,4 +1,4 @@
-# database setip
+# mysql setup
 sudo systemctl status  mysql
 sudo systemctl start mysql
 sudo systemctl status  mysql    
@@ -7,6 +7,19 @@ create database healthnet;
 use healthnet;
 source /home/sjanarth/projects/sugar/api/src/main/resources/sugar_create.sql
 source /home/sjanarth/projects/healthnet/api/src/main/resources/healthnet_create.sql
+
+# mongo setup
+sudo systemctl status mongodb
+sudo systemctl start mongod
+sudo systemctl status mongod
+mongo --version
+mongo
+use healthnet
+db.sugar_preferences.insertOne({"entityId":"5","type":"USER","name":"enableSSO","value":"true"})
+db.sugar_preferences.find()
+db.sugar_preferences.remove({})
+
+
 
 # to compile sugar app
  mvn clean package -Dmaven.test.skip=true
